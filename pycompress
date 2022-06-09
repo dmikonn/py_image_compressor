@@ -1,0 +1,13 @@
+#!/usr/bin/env python3.10
+from bash_parser import get_conv_parameters
+from inputfile_data import get_input_image
+from resizer import compress_img
+
+def main():
+    conv_parameters = get_conv_parameters()
+    get_input_image(conv_parameters[0], None)
+    converted_file = compress_img(*conv_parameters)
+    get_input_image(conv_parameters[0], converted_file)
+
+if __name__ == "__main__":
+    main()
